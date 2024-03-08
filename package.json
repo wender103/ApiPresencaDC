@@ -1,7 +1,7 @@
 {
-  "name": "teste_node",
+  "name": "ApiPresencaDC",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vai informar qual música o user está ouvindo no perfil do discord dele",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
