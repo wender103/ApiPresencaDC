@@ -20,9 +20,14 @@ app.post("/prececa/dc", (req, res) => {
         buttons: [{ label: `Ouvindo Musi .-. Verse`, url: `https://ptb.discord.com/channels/@me/836991436410716180/1149719460194828358` }],
     };
 
-    RPC.updatePresence(presenceData);
-
-    res.send("Rich Presence Atualizado!");
+    RPC.updatePresence(presenceData)
+        .then(() => {
+            res.send("Rich Presence Atualizado!");
+        })
+        .catch(error => {
+            console.error("Erro ao atualizar o Rich Presence:", error);
+            res.status(500).send("Erro ao atualizar o Rich Presence");
+        });
 });
 
 app.post("/prececa/dc/progresso", (req, res) => {
